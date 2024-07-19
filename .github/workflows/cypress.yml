@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
+      - name: Install PNPM
+        run: npm i -g pnpm
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6.7.1
