@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.3",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
+    "cypress": "^13.13.1",
     "eslint": "8.43.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0"
