@@ -15,28 +15,31 @@ describe("GET /user/getUserData", () => {
     })
   })
 
-  it("get user data", () => {
-      cy.get('@access_token').then((access_token) => {
-
-      
+  it('', () => {
+    cy.get('@access_token').then((access_token) => {
       
       cy.request({
         method: 'GET',
         failOnStatusCode: false,
-        url: 'https://fimm-api.8corp.com.br/user/getUserData',
+        url: 'https://fimm-api.8corp.com.br/user/getAll',
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
       }).then((response) => {
         expect(response.status).to.eq(200)
-        expect(response.body.email).to.be.a('string')
-        expect(response.body.nome).to.be.a('string')
-        expect(response.body.contrato).to.be.a('string')
-        expect(response.body.cidade).to.be.a('string')
-        expect(response.body.funcao).to.be.a('string')
-        expect(response.body.cpf).to.be.a('string')
-        expect(response.body.matricula).to.be.a('string')
+        response.body.forEach((user: any )=> {
+          expect(user.id).to.be.a('string')
+          expect(user.cidade).to.be.a('string')
+          expect(user.cpf).to.be.a('string')
+          expect(user.funcao).to.be.a('string')
+          // expect(user.email).to.be.a('string')
+          expect(user.matricula).to.be.a('string')
+          expect(user.nome).to.be.a('string')
+          expect(user.contrato).to.be.a('string')
+        });
       })
+    
     })
   })
+
 })
