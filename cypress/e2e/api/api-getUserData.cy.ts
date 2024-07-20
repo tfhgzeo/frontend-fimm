@@ -17,9 +17,6 @@ describe("GET /user/getUserData", () => {
 
   it("get user data", () => {
       cy.get('@access_token').then((access_token) => {
-
-      
-      
       cy.request({
         method: 'GET',
         failOnStatusCode: false,

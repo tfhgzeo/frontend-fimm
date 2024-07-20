@@ -10,7 +10,6 @@ context("POST /auth/login", () => {
     ).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body.access_token).to.be.a('string')
-      
     })
   })
 
